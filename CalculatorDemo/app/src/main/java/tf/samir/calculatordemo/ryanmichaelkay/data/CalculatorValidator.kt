@@ -1,6 +1,6 @@
 package tf.samir.calculatordemo.ryanmichaelkay.data
 
-object CalculatorValidator: Validator {
+object CalculatorValidator : Validator {
 
     override suspend fun validateExpression(exp: String): Boolean {
 
@@ -20,9 +20,10 @@ object CalculatorValidator: Validator {
 
     private fun hasTooManyDecimalsPerOperand(expression: String): Boolean {
         val operands = expression.split("+", "-", "/", "*")
-        operands.forEach { operand -> String
-            val occurrences = operand.count {
-                char -> Char
+        operands.forEach { operand ->
+            String
+            val occurrences = operand.count { char ->
+                Char
                 char.equals('.')
             }
 
@@ -38,7 +39,8 @@ object CalculatorValidator: Validator {
     private fun invalidOperand(expression: String): Boolean {
         val operands = expression.split("+", "-", "/", "*")
 
-        operands.forEach {operand -> String
+        operands.forEach { operand ->
+            String
             if (operand.endsWith(".")) return true
             if (operand.startsWith(".")) return true
         }
@@ -51,12 +53,12 @@ object CalculatorValidator: Validator {
 
     private val validSymbols = validOperators + "."
 
-    private fun invalidEnd(expression: String):Boolean {
+    private fun invalidEnd(expression: String): Boolean {
         validSymbols.forEach { if (expression.endsWith(it)) return true }
         return false
     }
 
-    private fun invalidStart(expression: String):Boolean {
+    private fun invalidStart(expression: String): Boolean {
         validSymbols.forEach { if (expression.startsWith(it)) return true }
         return false
     }
@@ -75,7 +77,7 @@ object CalculatorValidator: Validator {
     }
 
     private fun isConcurrentDecimal(current: Char, next: Char): Boolean {
-        if (current.toString() == "." && next.toString() ==".") {
+        if (current.toString() == "." && next.toString() == ".") {
             return true
         }
         return false
