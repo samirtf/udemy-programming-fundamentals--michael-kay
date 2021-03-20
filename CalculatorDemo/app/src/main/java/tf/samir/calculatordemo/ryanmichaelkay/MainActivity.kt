@@ -1,7 +1,8 @@
-package tf.samir.calculatordemo
+package tf.samir.calculatordemo.ryanmichaelkay
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import tf.samir.calculatordemo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
