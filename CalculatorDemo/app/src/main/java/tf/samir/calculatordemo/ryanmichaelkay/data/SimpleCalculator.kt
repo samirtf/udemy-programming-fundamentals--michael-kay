@@ -3,7 +3,7 @@ package tf.samir.calculatordemo.ryanmichaelkay.data
 import tf.samir.calculatordemo.ryanmichaelkay.domain.Calculator
 import tf.samir.calculatordemo.ryanmichaelkay.domain.ResultWrapper
 
-class SimpleCalculator(val validator: Validator, val evaluator: Evaluator): Calculator {
+class SimpleCalculator(private val validator: Validator, private val evaluator: Evaluator): Calculator {
 
     override suspend fun evaluateExpression(
         exp: String,
